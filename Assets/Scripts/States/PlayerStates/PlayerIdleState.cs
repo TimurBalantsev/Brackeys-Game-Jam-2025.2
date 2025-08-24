@@ -7,7 +7,7 @@ public class PlayerIdleState : PlayerState
     public void Enter(Player player)
     {
         this.player = player;
-        player.Animator.Play("orc_idle");
+        player.Animator.Play("player_idle");
     }
 
     public void Exit()

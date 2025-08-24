@@ -44,7 +44,7 @@ public class Player : Entity.Entity
 
     private void Update()
     {
-        HandleFlip(mainCam!.ScreenToWorldPoint(Input.mousePosition));
+        // HandleFlip(mainCam!.ScreenToWorldPoint(Input.mousePosition));
         StateInput();
         StateUpdate();
     }
