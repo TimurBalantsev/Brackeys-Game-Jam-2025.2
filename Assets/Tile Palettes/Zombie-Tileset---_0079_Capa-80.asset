@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: Zombie-Tileset---_0079_Capa-80
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300000, guid: 89ef8ac9d5328a94a89c9fbb97301576, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d73d0dff3195e5245be5a5be45e835d3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
