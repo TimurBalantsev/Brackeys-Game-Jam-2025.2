@@ -20,14 +20,7 @@ public class Scarecrow : MonoBehaviour, Interactable
 
     public void Select(Player player, bool isSelected)
     {
-        if (isSelected)
-        {
-            spriteRenderer.color = highlightColor;
-        }
-        else
-        {
-            spriteRenderer.color = defaultColor;
-        }
+        spriteRenderer.color = isSelected ? highlightColor : defaultColor;
     }
 
     public Transform GetTransform()
