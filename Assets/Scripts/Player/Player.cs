@@ -48,7 +48,18 @@ public class Player : Entity.Entity
         StateInput();
         StateUpdate();
     }
-    
+
+    private void FixedUpdate()
+    {
+        StateFixedUpdate();
+    }
+
+    private void StateFixedUpdate()
+    {
+        PlayerState newState = activeState.FixedUpdate(Time.deltaTime);
+        if(newState != null) ChangeState(newState);
+    }
+
     private void ChangeState(PlayerState newState)
     {
         activeState?.Exit();
@@ -84,10 +95,8 @@ public class Player : Entity.Entity
 
     public void Move(Vector2 movementDirection)
     {
-        Vector2 newPosition = movementDirection * (stats.speed * Time.deltaTime);
-        Vector3 delta = new Vector3 (newPosition.x, newPosition.y, 0);
-        // rigidBody.MovePosition(newPosition);
-        transform.position += delta;
+        Vector2 newPosition = rigidBody.position + movementDirection * (stats.speed * Time.fixedDeltaTime);
+        rigidBody.MovePosition(newPosition);
     }
 
     protected override void Die()

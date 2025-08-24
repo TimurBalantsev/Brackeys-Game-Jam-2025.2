@@ -50,7 +50,15 @@ public class PlayerWalkingState : PlayerState
 
     public PlayerState Update(float deltaTime)
     {
-        
+        return null;
+        // Vector2 movementDirection = InputManager.Instance.GetMovementDirection();
+        // HandleAnimation(movementDirection);
+        // player.Move(movementDirection);
+        // return null;
+    }
+
+    public PlayerState FixedUpdate(float fixedDeltaTime)
+    {
         Vector2 movementDirection = InputManager.Instance.GetMovementDirection();
         HandleAnimation(movementDirection);
         player.Move(movementDirection);
@@ -65,8 +73,8 @@ public class PlayerWalkingState : PlayerState
                 return null;
             case InputManager.InputActions.NONE:
                 return new PlayerIdleState();
-            case InputManager.InputActions.ATTACK:
-                return new PlayerAttackingState();
+            // case InputManager.InputActions.ATTACK:
+            //     return new PlayerAttackingState();
             default:
                 return null;
         }

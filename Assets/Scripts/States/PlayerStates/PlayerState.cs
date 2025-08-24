@@ -6,4 +6,9 @@ public interface PlayerState
     
     PlayerState Update(float deltaTime);
     PlayerState Input(InputManager.InputActions inputAction);
+
+    PlayerState FixedUpdate(float fixedDeltaTime)
+    {
+        return null;
+    }
 }

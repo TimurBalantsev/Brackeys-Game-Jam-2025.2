@@ -11,6 +11,7 @@ public class InputManager : MonoBehaviour
     private InputSystem_Actions playerInput;
     public event EventHandler OnAttackPerformed;
     public event EventHandler OnAttackReleased;
+    public event EventHandler OnInteract;
     
     public enum InputActions
     {
@@ -36,6 +37,12 @@ public class InputManager : MonoBehaviour
         
         playerInput.Player.Attack.started += PlayerAttackStarted;
         playerInput.Player.Attack.canceled += PlayerAttackReleased;
+        playerInput.Player.Interact.started += PlayerInteractStarted;
+    }
+
+    private void PlayerInteractStarted(InputAction.CallbackContext obj)
+    {
+        OnInteract?.Invoke(this, EventArgs.Empty);
     }
 
     private void PlayerAttackReleased(InputAction.CallbackContext obj)

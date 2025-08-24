@@ -28,8 +28,8 @@ public class PlayerIdleState : PlayerState
                 return new PlayerWalkingState();
             case InputManager.InputActions.NONE:
                 return null;
-            case InputManager.InputActions.ATTACK:
-                return new PlayerAttackingState();
+            // case InputManager.InputActions.ATTACK:
+            //     return new PlayerAttackingState();
             default:
                 return null;
         }
